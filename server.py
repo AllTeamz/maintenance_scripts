@@ -9,9 +9,9 @@ from smtplib import SMTP
 
 
 def emailAlert(recipient, server, error):
-    gmail_user = "username@gmail.com"
-    gmail_pwd = "password"
-    FROM = 'username@gmail.com'
+    gmail_user = "ryan.taylor0@gmail.com"
+    gmail_pwd = "Agendavibrate1!"
+    FROM = 'ryan.taylor0@gmail.com'
     TO = recipient #must be a list
     SUBJECT = "SERVER ERROR: " + server
     TEXT = "Error code/message: " + error
@@ -34,7 +34,7 @@ def emailAlert(recipient, server, error):
 
 try:
     server = sys.argv[1];
-    recipient = ['mail@xyz.org']
+    recipient = ['ryan@allteamz.com']
     r = requests.head(server)
     if r.status_code != 200 :
         emailAlert(recipient, server, str(r.status_code));
